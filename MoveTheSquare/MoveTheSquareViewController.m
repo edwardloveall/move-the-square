@@ -33,7 +33,7 @@
     CGRect squareFrame = self.theSquare.frame;
     NSString *theButtonTitle = theButton.currentTitle;
 
-    if (theButtonTitle == @"Up") {
+    if ([theButtonTitle isEqualToString: @"Up"]) {
         float top = squareFrame.origin.y - 10;
 
         [self.theSquare setFrame:CGRectMake(squareFrame.origin.x,
