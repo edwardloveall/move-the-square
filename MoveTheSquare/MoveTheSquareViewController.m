@@ -37,8 +37,6 @@
 
     if ([theButtonTitle isEqualToString: @"Up"]) {
         squareFrame.origin.y -= changeBy;
-        squareFrame.size.width += changeBy;
-        squareFrame.size.height += changeBy;
     } else if ([theButtonTitle isEqualToString: @"Down"]) {
         squareFrame.origin.y += changeBy;
     } else if ([theButtonTitle isEqualToString: @"Left"]) {
