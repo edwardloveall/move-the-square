@@ -30,7 +30,7 @@
 }
 
 - (IBAction)affectButton:(id)sender {
-    float changeBy = 10;
+    CGFloat changeBy = 10;
     UIButton *theButton = (UIButton *)sender;
     NSString *theButtonTitle = theButton.currentTitle;
     CGRect squareFrame = self.theSquare.frame;
