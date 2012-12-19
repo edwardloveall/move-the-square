@@ -35,7 +35,7 @@
     if (bounds.origin.x + bounds.size.width > viewFrame.size.width ||
         bounds.origin.x < 0 ||
         bounds.origin.y + bounds.size.width > viewFrame.size.height ||
-        bounds.origin.y < 0) {
+        bounds.origin.y < 115) { // bottom of the control buttons
         return NO;
     } else {
         return YES;
