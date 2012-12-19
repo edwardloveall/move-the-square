@@ -15,6 +15,7 @@
 @implementation MoveTheSquareViewController
 
 @synthesize theSquare = _theSquare;
+@synthesize theView = _theView;
 
 - (void)viewDidLoad
 {
@@ -28,28 +29,34 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)movePosition:(id)sender {
-    float moveBy = 10;
+- (IBAction)affectButton:(id)sender {
+    float changeBy = 10;
     UIButton *theButton = (UIButton *)sender;
     NSString *theButtonTitle = theButton.currentTitle;
     CGRect squareFrame = self.theSquare.frame;
 
     if ([theButtonTitle isEqualToString: @"Up"]) {
-        squareFrame.origin.y -= moveBy;
+        squareFrame.origin.y -= changeBy;
+        squareFrame.size.width += changeBy;
+        squareFrame.size.height += changeBy;
     } else if ([theButtonTitle isEqualToString: @"Down"]) {
-        squareFrame.origin.y += moveBy;
+        squareFrame.origin.y += changeBy;
     } else if ([theButtonTitle isEqualToString: @"Left"]) {
-        squareFrame.origin.x -= moveBy;
+        squareFrame.origin.x -= changeBy;
     } else if ([theButtonTitle isEqualToString: @"Right"]) {
-        squareFrame.origin.x += moveBy;
+        squareFrame.origin.x += changeBy;
+    } else if ([theButtonTitle isEqualToString: @"Smaller"]) {
+        squareFrame.size.width -= changeBy;
+        squareFrame.size.height -= changeBy;
+    } else if ([theButtonTitle isEqualToString: @"Larger"]) {
+        squareFrame.size.width += changeBy;
+        squareFrame.size.height += changeBy;
     }
 
-
+    NSLog(@"x: %g, y: %g, w: %g, h: %g", squareFrame.origin.x, squareFrame.origin.y, squareFrame.size.width, squareFrame.size.height);
     [self.theSquare setFrame: squareFrame];
+
 }
-
-
-
 
 //- (IBAction)upTouchUpInside:(id)sender {
 //    CGRect theButtonFrame = self.theSquare.frame;

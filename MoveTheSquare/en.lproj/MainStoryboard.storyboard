@@ -32,7 +32,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="movePosition:" destination="2" eventType="touchUpInside" id="1Vp-1q-XaX"/>
+                                    <action selector="affectButton:" destination="2" eventType="touchUpInside" id="A6L-rC-Wmo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z88-SZ-EAk">
@@ -45,7 +45,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="movePosition:" destination="2" eventType="touchUpInside" id="dPz-G7-LKK"/>
+                                    <action selector="affectButton:" destination="2" eventType="touchUpInside" id="9bz-81-UcW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKn-l5-EVg">
@@ -58,7 +58,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="movePosition:" destination="2" eventType="touchUpInside" id="wnw-BK-Xr2"/>
+                                    <action selector="affectButton:" destination="2" eventType="touchUpInside" id="q8y-UN-dOJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3J3-fO-MdC">
@@ -70,6 +70,10 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="affectButton:" destination="2" eventType="touchUpInside" id="eiY-HP-n1T"/>
+                                    <action selector="changeSize:" destination="2" eventType="touchUpInside" id="jk0-CR-exB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifq-m1-eE9">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -81,7 +85,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="movePosition:" destination="2" eventType="touchUpInside" id="IWf-kh-BBm"/>
+                                    <action selector="affectButton:" destination="2" eventType="touchUpInside" id="EkE-Vy-yaT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkF-Oq-dba">
@@ -93,6 +97,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="affectButton:" destination="2" eventType="touchUpInside" id="nGP-CL-bGM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -118,6 +125,7 @@
                     </view>
                     <connections>
                         <outlet property="theSquare" destination="aQV-ys-Fun" id="UMW-ub-9F3"/>
+                        <outlet property="theView" destination="3" id="Voc-R4-aow"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -131,8 +139,9 @@
         <class className="MoveTheSquareViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MoveTheSquareViewController.h"/>
             <relationships>
-                <relationship kind="action" name="movePosition:"/>
+                <relationship kind="action" name="affectButton:"/>
                 <relationship kind="outlet" name="theSquare" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="theView" candidateClass="UIView"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">

@@ -10,5 +10,6 @@
 
 @interface MoveTheSquareViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *theSquare;
+@property (strong, nonatomic) IBOutlet UIView *theView;
 
 @end
