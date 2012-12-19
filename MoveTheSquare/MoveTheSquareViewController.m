@@ -29,19 +29,26 @@
 }
 
 - (IBAction)movePosition:(id)sender {
+    float moveBy = 10;
     UIButton *theButton = (UIButton *)sender;
-    CGRect squareFrame = self.theSquare.frame;
     NSString *theButtonTitle = theButton.currentTitle;
+    CGRect squareFrame = self.theSquare.frame;
 
     if ([theButtonTitle isEqualToString: @"Up"]) {
-        float top = squareFrame.origin.y - 10;
-
-        [self.theSquare setFrame:CGRectMake(squareFrame.origin.x,
-                                            top,
-                                            squareFrame.size.width,
-                                            squareFrame.size.height)];
+        squareFrame.origin.y -= moveBy;
+    } else if ([theButtonTitle isEqualToString: @"Down"]) {
+        squareFrame.origin.y += moveBy;
+    } else if ([theButtonTitle isEqualToString: @"Left"]) {
+        squareFrame.origin.x -= moveBy;
+    } else if ([theButtonTitle isEqualToString: @"Right"]) {
+        squareFrame.origin.x += moveBy;
     }
+
+
+    [self.theSquare setFrame: squareFrame];
 }
+
+
 
 
 //- (IBAction)upTouchUpInside:(id)sender {
