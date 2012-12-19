@@ -29,37 +29,49 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)checkBounds:(CGRect)bounds {
+    CGRect viewFrame = self.theView.frame;
+    
+    if (bounds.origin.x + bounds.size.width > viewFrame.size.width ||
+        bounds.origin.x < 0 ||
+        bounds.origin.y + bounds.size.width > viewFrame.size.height ||
+        bounds.origin.y < 0) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
 - (IBAction)affectButton:(id)sender {
-    CGFloat changeBy = 10;
+    CGFloat moveBy = 10;
+    CGFloat resizeBy = 10;
     UIButton *theButton = (UIButton *)sender;
     NSString *theButtonTitle = theButton.currentTitle;
     CGRect squareFrame = self.theSquare.frame;
 
     if ([theButtonTitle isEqualToString: @"Up"]) {
-        squareFrame.origin.y -= changeBy;
+        squareFrame.origin.y -= moveBy;
     } else if ([theButtonTitle isEqualToString: @"Down"]) {
-        squareFrame.origin.y += changeBy;
+        squareFrame.origin.y += moveBy;
     } else if ([theButtonTitle isEqualToString: @"Left"]) {
-        squareFrame.origin.x -= changeBy;
+        squareFrame.origin.x -= moveBy;
     } else if ([theButtonTitle isEqualToString: @"Right"]) {
-        squareFrame.origin.x += changeBy;
+        squareFrame.origin.x += moveBy;
     } else if ([theButtonTitle isEqualToString: @"Smaller"]) {
-        squareFrame.size.width -= changeBy;
-        squareFrame.size.height -= changeBy;
+        squareFrame.size.width -= resizeBy;
+        squareFrame.size.height -= resizeBy;
     } else if ([theButtonTitle isEqualToString: @"Larger"]) {
-        squareFrame.size.width += changeBy;
-        squareFrame.size.height += changeBy;
+        squareFrame.size.width += resizeBy;
+        squareFrame.size.height += resizeBy;
     }
 
     NSLog(@"x: %g, y: %g, w: %g, h: %g", squareFrame.origin.x, squareFrame.origin.y, squareFrame.size.width, squareFrame.size.height);
-    [self.theSquare setFrame: squareFrame];
+    
+    if ([self checkBounds:squareFrame]) {
+        [self.theSquare setFrame: squareFrame];
+    }
 
 }
-
-//- (IBAction)upTouchUpInside:(id)sender {
-//    CGRect theButtonFrame = self.theSquare.frame;
-//    NSLog(@"%g", theButtonFrame.origin.x);
-//}
 
 
 @end
