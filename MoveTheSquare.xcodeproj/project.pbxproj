@@ -18,8 +18,6 @@
 		399C588D168155EC00FAEAA4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 399C588C168155EC00FAEAA4 /* Default-568h@2x.png */; };
 		399C5890168155EC00FAEAA4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 399C588E168155EC00FAEAA4 /* MainStoryboard.storyboard */; };
 		399C5893168155EC00FAEAA4 /* MoveTheSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 399C5892168155EC00FAEAA4 /* MoveTheSquareViewController.m */; };
-		399C589C1681584300FAEAA4 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 399C589A1681584300FAEAA4 /* button.png */; };
-		399C589D1681584300FAEAA4 /* button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 399C589B1681584300FAEAA4 /* button@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +37,6 @@
 		399C588F168155EC00FAEAA4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		399C5891168155EC00FAEAA4 /* MoveTheSquareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoveTheSquareViewController.h; sourceTree = "<group>"; };
 		399C5892168155EC00FAEAA4 /* MoveTheSquareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoveTheSquareViewController.m; sourceTree = "<group>"; };
-		399C589A1681584300FAEAA4 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
-		399C589B1681584300FAEAA4 /* button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +83,6 @@
 		399C587C168155EC00FAEAA4 /* MoveTheSquare */ = {
 			isa = PBXGroup;
 			children = (
-				399C58991681584300FAEAA4 /* Assets */,
 				399C5885168155EC00FAEAA4 /* MoveTheSquareAppDelegate.h */,
 				399C5886168155EC00FAEAA4 /* MoveTheSquareAppDelegate.m */,
 				399C588E168155EC00FAEAA4 /* MainStoryboard.storyboard */,
@@ -111,15 +106,6 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
-		};
-		399C58991681584300FAEAA4 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				399C589A1681584300FAEAA4 /* button.png */,
-				399C589B1681584300FAEAA4 /* button@2x.png */,
-			);
-			path = Assets;
-			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -178,8 +164,6 @@
 				399C588B168155EC00FAEAA4 /* Default@2x.png in Resources */,
 				399C588D168155EC00FAEAA4 /* Default-568h@2x.png in Resources */,
 				399C5890168155EC00FAEAA4 /* MainStoryboard.storyboard in Resources */,
-				399C589C1681584300FAEAA4 /* button.png in Resources */,
-				399C589D1681584300FAEAA4 /* button@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +258,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MoveTheSquare/MoveTheSquare-Prefix.pch";
 				INFOPLIST_FILE = "MoveTheSquare/MoveTheSquare-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -285,7 +271,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MoveTheSquare/MoveTheSquare-Prefix.pch";
 				INFOPLIST_FILE = "MoveTheSquare/MoveTheSquare-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -309,6 +297,7 @@
 				399C5898168155EC00FAEAA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
