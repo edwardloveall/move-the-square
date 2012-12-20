@@ -106,7 +106,6 @@
                     </view>
                     <connections>
                         <outlet property="theSquare" destination="YYI-gw-TOM" id="MWQ-xm-hg0"/>
-                        <outlet property="theView" destination="3" id="Voc-R4-aow"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -120,7 +119,6 @@
                 <relationship kind="action" name="affectButton:"/>
                 <relationship kind="outlet" name="progress" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="theSquare" candidateClass="UIView"/>
-                <relationship kind="outlet" name="theView" candidateClass="UIView"/>
             </relationships>
         </class>
     </classes>

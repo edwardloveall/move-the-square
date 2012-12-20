@@ -10,7 +10,6 @@
 
 @interface MoveTheSquareViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIView *theSquare;
-@property (strong, nonatomic) IBOutlet UIView *theView;
 @property (weak, nonatomic) IBOutlet UIProgressView *progress;
 
 @end

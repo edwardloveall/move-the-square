@@ -15,13 +15,12 @@
 @implementation MoveTheSquareViewController
 
 @synthesize theSquare = _theSquare;
-@synthesize theView = _theView;
 @synthesize progress = _progress;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    NSLog(@"%@", self.view.subviews);
 }
 
 - (void)didReceiveMemoryWarning
@@ -31,11 +30,9 @@
 }
 
 - (BOOL)checkBounds:(CGRect)bounds {
-    CGRect viewFrame = self.theView.frame;
-    
-    if (bounds.origin.x + bounds.size.width > viewFrame.size.width ||
+    if (bounds.origin.x + bounds.size.width > self.view.frame.size.width ||
         bounds.origin.x < 0 ||
-        bounds.origin.y + bounds.size.width > viewFrame.size.height ||
+        bounds.origin.y + bounds.size.width > self.view.frame.size.height ||
         bounds.origin.y < 115) { // bottom of the control buttons
         return NO;
     } else {
@@ -78,13 +75,16 @@
 //    NSLog(@"x: %g, y: %g, w: %g, h: %g", squareFrame.origin.x, squareFrame.origin.y, squareFrame.size.width, squareFrame.size.height);
     
     if ([self checkBounds:squareFrame] && [self checkSize:squareFrame.size.width]) {
-        [self.theSquare setFrame: squareFrame];
+        [UIView animateWithDuration:0.1 animations:^{
+            [self.theSquare setFrame: squareFrame];
+        }];
     }
 
     
 // Animate the square. I didn't totally understand this, so I took it out until I know what it's doing
 //[UIView animateWithDuration:0.1 animations:^{
 //    [self.theSquare setFrame: squareFrame];
+//    
 //}];
 
 }
